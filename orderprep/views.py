@@ -4,9 +4,6 @@ from django.views import View
 
 # Create your views here.
 
-def index(request):
-    return HttpResponse('Hello! Order Prep View')
-
 class OrderPrepView(View):
     def get(self, request):
         return HttpResponse('OrderPrepView')
