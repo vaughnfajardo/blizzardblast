@@ -1,19 +1,11 @@
 from django.contrib import admin
 
-from .models import Addon, AddonTally, AuthGroup, AuthGroupPermissions, AuthUserGroups, AuthUserUserPermissions, Customer, Customization, DjangoAdminLog, DjangoContentType, DjangoMigrations, DjangoSession, Employee, Ingredient, Manager, Milkshake, MilkshakeSales, MilkshakeTally, Orders, Recipe, RecipeIngredient, RecipeTally, Restock, Staff
+from .models import Addon, AddonTally, Customer, Customization, Employee, Ingredient, Manager, Milkshake, MilkshakeSales, MilkshakeTally, Orders, Recipe, RecipeIngredient, RecipeTally, Restock, Staff
 
 admin.site.register(Addon)
 admin.site.register(AddonTally) 
-admin.site.register(AuthGroup)
-admin.site.register(AuthGroupPermissions) 
-admin.site.register(AuthUserGroups)
-admin.site.register(AuthUserUserPermissions) 
 admin.site.register(Customer)
 admin.site.register(Customization)
-admin.site.register(DjangoAdminLog) 
-admin.site.register(DjangoContentType) 
-admin.site.register(DjangoMigrations) 
-admin.site.register(DjangoSession) 
 admin.site.register(Employee)
 admin.site.register(Ingredient) 
 admin.site.register(Manager)
