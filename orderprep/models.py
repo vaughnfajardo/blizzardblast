@@ -21,20 +21,6 @@ class Addon(models.Model):
     def __str__(self):
         return self.ingredient
 
-
-
-class AddonTally(models.Model):
-    date_recorded = models.DateField(blank=True, null=True)
-    ingredient = models.ForeignKey('Ingredient', models.DO_NOTHING)
-
-    class Meta:
-        managed = False
-        db_table = 'addon_tally'
-    
-    def __str__(self):
-        return self.ingredient
-
-
 class Customer(models.Model):
     customer_id = models.IntegerField(primary_key=True)
     customer_name = models.CharField(max_length=25, blank=True, null=True)
@@ -119,34 +105,6 @@ class Milkshake(models.Model):
         return self.recipe
 
 
-
-class MilkshakeSales(models.Model):
-    date_recorded = models.DateField(blank=True, null=True)
-    total_sales = models.FloatField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'milkshake_sales'
-
-    def __str__(self):
-        return self.total_sales
-
-
-
-class MilkshakeTally(models.Model):
-    date_recorded = models.DateField(blank=True, null=True)
-    total_tally = models.IntegerField(blank=True, null=True)
-    item_type = models.CharField(max_length=15, blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'milkshake_tally'
-
-    def __str__(self):
-        return self.total_tally
-
-
-
 class Orders(models.Model):
     txn_number = models.IntegerField(primary_key=True)
     order_date = models.DateField(blank=True, null=True)
@@ -189,20 +147,6 @@ class RecipeIngredient(models.Model):
 
     def __str__(self):
         return self.ingredient
-
-
-
-class RecipeTally(models.Model):
-    date_recorded = models.DateField(blank=True, null=True)
-    recipe = models.ForeignKey(Recipe, models.DO_NOTHING)
-
-    class Meta:
-        managed = False
-        db_table = 'recipe_tally'
-
-    def __str__(self):
-        return self.recipe
-
 
 
 class Restock(models.Model):
