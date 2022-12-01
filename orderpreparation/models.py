@@ -158,7 +158,7 @@ class Restock(models.Model):
         db_table = 'restock'
 
     def __str__(self):
-        return self.restock_status
+        return str(self.restock_status)
 
 
 

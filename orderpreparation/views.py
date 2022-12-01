@@ -10,8 +10,9 @@ from .models import Addon, Customer, Customization, Employee, Ingredient, Manage
 
 def orderpreparation(request):
     order_list = Orders.objects.all()
+    milkshake_list = Milkshake.objects.all()
     return render(request, 'orderpreparation.html', 
-    {"order_list": order_list})
+    {"order_list": order_list, "milkshake_list":milkshake_list})
 
 #def sales(request):
 
