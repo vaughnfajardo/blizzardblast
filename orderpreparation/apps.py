@@ -3,4 +3,4 @@ from django.apps import AppConfig
 
 class OrderprepConfig(AppConfig):
     default_auto_field = "django.db.models.BigAutoField"
-    name = "orderprep"
+    name = "orderpreparation"

@@ -116,7 +116,7 @@ class Orders(models.Model):
         db_table = 'orders'
 
     def __str__(self):
-        return self.txn_number
+        return str(self.txn_number)
 
 
 
