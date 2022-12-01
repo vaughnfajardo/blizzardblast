@@ -102,7 +102,7 @@ class Milkshake(models.Model):
         db_table = 'milkshake'
 
     def __str__(self):
-        return self.recipe
+        return str(self.recipe)
 
 
 class Orders(models.Model):
@@ -130,7 +130,7 @@ class Recipe(models.Model):
         db_table = 'recipe'
     
     def __str__(self):
-        return self.recipe_name
+        return str(self.recipe_name)
 
 
 

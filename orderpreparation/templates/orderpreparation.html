@@ -5,26 +5,18 @@
 {% block content %}
     <h1>ORDER SLIP</h1>
     {% for order in order_list %}
-    {% for milkshake in milkshake_list %}
     <p>Customer: 
     {{ order.customer }}
     </p>
     <p>Date: 
         {{ order.order_date }}
         </p>
-    <p>Milkshake
-        {{ milkshake.size }}
-        </p>
-    <p>Recipe
-        {{ milkshake.recipe }}
-        </p>
 
-
-
-    </p>
 
     {% endfor %}
-    {% endfor %}
+    {% for milkshake in milkshake_list %}
 
+    {{milkshake.recipe}}
+    {% endfor %}
 
 {% endblock %}
