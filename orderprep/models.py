@@ -18,6 +18,10 @@ class Addon(models.Model):
         managed = False
         db_table = 'addon'
 
+    def __str__(self):
+        return self.ingredient
+
+
 
 class AddonTally(models.Model):
     date_recorded = models.DateField(blank=True, null=True)
@@ -26,6 +30,10 @@ class AddonTally(models.Model):
     class Meta:
         managed = False
         db_table = 'addon_tally'
+    
+    def __str__(self):
+        return self.ingredient
+
 
 class Customer(models.Model):
     customer_id = models.IntegerField(primary_key=True)
@@ -34,6 +42,10 @@ class Customer(models.Model):
     class Meta:
         managed = False
         db_table = 'customer'
+
+    def __str__(self):
+        return self.customer_name
+
 
 
 class Customization(models.Model):
@@ -45,6 +57,10 @@ class Customization(models.Model):
         managed = False
         db_table = 'customization'
 
+    def __str__(self):
+        return self.customization_name
+
+
 
 class Employee(models.Model):
     employee_id = models.IntegerField(primary_key=True)
@@ -53,6 +69,10 @@ class Employee(models.Model):
     class Meta:
         managed = False
         db_table = 'employee'
+
+    def __str__(self):
+        return self.employee_name
+
 
 
 class Ingredient(models.Model):
@@ -66,6 +86,10 @@ class Ingredient(models.Model):
         managed = False
         db_table = 'ingredient'
 
+    def __str__(self):
+        return self.ingredient_name
+
+
 
 class Manager(models.Model):
     employee = models.ForeignKey(Employee, models.DO_NOTHING)
@@ -74,6 +98,10 @@ class Manager(models.Model):
     class Meta:
         managed = False
         db_table = 'manager'
+
+    def __str__(self):
+        return self.employee
+
 
 
 class Milkshake(models.Model):
@@ -87,6 +115,10 @@ class Milkshake(models.Model):
         managed = False
         db_table = 'milkshake'
 
+    def __str__(self):
+        return self.recipe
+
+
 
 class MilkshakeSales(models.Model):
     date_recorded = models.DateField(blank=True, null=True)
@@ -95,6 +127,10 @@ class MilkshakeSales(models.Model):
     class Meta:
         managed = False
         db_table = 'milkshake_sales'
+
+    def __str__(self):
+        return self.total_sales
+
 
 
 class MilkshakeTally(models.Model):
@@ -105,6 +141,10 @@ class MilkshakeTally(models.Model):
     class Meta:
         managed = False
         db_table = 'milkshake_tally'
+
+    def __str__(self):
+        return self.total_tally
+
 
 
 class Orders(models.Model):
@@ -117,6 +157,10 @@ class Orders(models.Model):
         managed = False
         db_table = 'orders'
 
+    def __str__(self):
+        return self.txn_number
+
+
 
 class Recipe(models.Model):
     recipe_id = models.IntegerField(primary_key=True)
@@ -126,6 +170,10 @@ class Recipe(models.Model):
     class Meta:
         managed = False
         db_table = 'recipe'
+    
+    def __str__(self):
+        return self.recipe_name
+
 
 
 class RecipeIngredient(models.Model):
@@ -139,6 +187,10 @@ class RecipeIngredient(models.Model):
         db_table = 'recipe_ingredient'
         unique_together = (('recipe', 'ingredient'),)
 
+    def __str__(self):
+        return self.ingredient
+
+
 
 class RecipeTally(models.Model):
     date_recorded = models.DateField(blank=True, null=True)
@@ -147,6 +199,10 @@ class RecipeTally(models.Model):
     class Meta:
         managed = False
         db_table = 'recipe_tally'
+
+    def __str__(self):
+        return self.recipe
+
 
 
 class Restock(models.Model):
@@ -157,6 +213,10 @@ class Restock(models.Model):
         managed = False
         db_table = 'restock'
 
+    def __str__(self):
+        return self.restock_status
+
+
 
 class Staff(models.Model):
     employee = models.ForeignKey(Employee, models.DO_NOTHING)
@@ -166,3 +226,7 @@ class Staff(models.Model):
     class Meta:
         managed = False
         db_table = 'staff'
+
+    def __str__(self):
+        return self.employee
+
